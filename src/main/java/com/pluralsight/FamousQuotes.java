@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.util.Scanner;
+
 public class FamousQuotes {
     public static void main(String[] args) {
         String[] quotes = new String[10];
@@ -14,7 +16,18 @@ public class FamousQuotes {
         quotes[7] = "Never bend your head. Always hold it high. Look the world straight in the eye.";
         quotes[8] = "Have no fear of perfection, you'll never reach it.";
         quotes[9] = "Live as if you were to die tomorrow. Learn as if you were to live forever.";
-        
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to FamousQuotes!");
+        System.out.println("Would you like to change your life?");
+        System.out.print("Pick a number from 1-10: ");
+        int userChoice = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.println(quotes[userChoice - 1]);
+
+
     }
 
 }
