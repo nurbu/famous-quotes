@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class FamousQuotes {
     public static void main(String[] args) {
+        // See quotes free quotes
         String[] quotes = new String[10];
 
         quotes[0] = "If you can change you mind, you can change your life.";
@@ -18,6 +19,7 @@ public class FamousQuotes {
         quotes[9] = "Live as if you were to die tomorrow. Learn as if you were to live forever.";
 
         Scanner scanner = new Scanner(System.in);
+        // Repeats prompting to show user more quotes.
         while (true) {
             System.out.println("Welcome to FamousQuotes!");
             System.out.println("Would you like to change your life?");
@@ -26,7 +28,7 @@ public class FamousQuotes {
             System.out.print("Choice: ");
             int fateChoice = scanner.nextInt();
             int quoteIndex = 0;
-
+            // Helps catch any index out of bounds errors.
             try {
 
                 if (fateChoice == 1) {
@@ -50,7 +52,9 @@ public class FamousQuotes {
                     System.out.println("Have a great day!");
                     break;
                 }
-            } catch (Exception e) {
+            }
+            // Catchs the error and tells the user why their getting the error.
+            catch (Exception e) {
                 System.out.println("Sorry please put a number from 1-10");
                 scanner.nextLine();
             }
