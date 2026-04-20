@@ -18,20 +18,33 @@ public class FamousQuotes {
         quotes[9] = "Live as if you were to die tomorrow. Learn as if you were to live forever.";
 
         Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Welcome to FamousQuotes!");
+            System.out.println("Would you like to change your life?");
+            System.out.print("Pick a number from 1-10: ");
 
-        System.out.println("Welcome to FamousQuotes!");
-        System.out.println("Would you like to change your life?");
-        System.out.print("Pick a number from 1-10: ");
-        try {
-            int userChoice = scanner.nextInt();
-            scanner.nextLine();
+            try {
+                int userChoice = scanner.nextInt();
+                scanner.nextLine();
 
-            System.out.println(quotes[userChoice - 1]);
-        } catch (Exception e) {
-            System.out.println("Sorry please put a number from 1-10");
+                System.out.println("\n" + quotes[userChoice - 1]);
+                System.out.println("\nWould you like to see another quotes");
+                System.out.println("Type 1 for Yes");
+                System.out.println("Type 2 for No");
+                System.out.print("Choice: ");
+                int userChoice2 = scanner.nextInt();
+                scanner.nextLine();
+                if (userChoice2 == 1) {
+                    System.out.println();
+                } else if (userChoice2 == 2) {
+                    System.out.println("Have a great day!");
+                    break;
+                }
+            } catch (Exception e) {
+                System.out.println("Sorry please put a number from 1-10");
+                scanner.nextLine();
+            }
         }
-
-
     }
 
 }
