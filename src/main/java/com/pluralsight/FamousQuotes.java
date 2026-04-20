@@ -59,6 +59,7 @@ public class FamousQuotes {
                 scanner.nextLine();
             }
         }
+        scanner.close();
     }
 
 }
