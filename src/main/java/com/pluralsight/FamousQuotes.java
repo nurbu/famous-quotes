@@ -21,22 +21,32 @@ public class FamousQuotes {
         while (true) {
             System.out.println("Welcome to FamousQuotes!");
             System.out.println("Would you like to change your life?");
-            System.out.print("Pick a number from 1-10: ");
+            System.out.println("1: Choose your Quote.");
+            System.out.println("2: Randomize your life");
+            System.out.print("Choice: ");
+            int fateChoice = scanner.nextInt();
+            int quoteIndex = 0;
 
             try {
-                int userChoice = scanner.nextInt();
-                scanner.nextLine();
 
-                System.out.println("\n" + quotes[userChoice - 1]);
+                if (fateChoice == 1) {
+                    System.out.print("\nPick a number from 1-10: ");
+                    quoteIndex = scanner.nextInt();
+                    scanner.nextLine();
+                } else if (fateChoice == 2) {
+                    quoteIndex = (int) (Math.random() * 11) + 0;
+                }
+
+                System.out.println("\n" + quotes[quoteIndex - 1]);
                 System.out.println("\nWould you like to see another quotes");
                 System.out.println("Type 1 for Yes");
                 System.out.println("Type 2 for No");
                 System.out.print("Choice: ");
-                int userChoice2 = scanner.nextInt();
+                int repeat = scanner.nextInt();
                 scanner.nextLine();
-                if (userChoice2 == 1) {
+                if (repeat == 1) {
                     System.out.println();
-                } else if (userChoice2 == 2) {
+                } else if (repeat == 2) {
                     System.out.println("Have a great day!");
                     break;
                 }
