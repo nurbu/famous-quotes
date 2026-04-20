@@ -22,10 +22,14 @@ public class FamousQuotes {
         System.out.println("Welcome to FamousQuotes!");
         System.out.println("Would you like to change your life?");
         System.out.print("Pick a number from 1-10: ");
-        int userChoice = scanner.nextInt();
-        scanner.nextLine();
+        try {
+            int userChoice = scanner.nextInt();
+            scanner.nextLine();
 
-        System.out.println(quotes[userChoice - 1]);
+            System.out.println(quotes[userChoice - 1]);
+        } catch (Exception e) {
+            System.out.println("Sorry please put a number from 1-10");
+        }
 
 
     }
